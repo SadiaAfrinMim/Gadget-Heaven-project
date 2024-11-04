@@ -1,0 +1,147 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "Apple iPhone 15 Pro Max",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/ZfHPZn6/phone-3.jpg",
+      "price": 1299,
+      "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+      "specification": [
+        "6.7-inch Super Retina XDR display",
+        "A17 Bionic chip",
+        "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+        "LiDAR Scanner",
+        "Up to 2TB storage"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 2,
+      "product_title": "Apple iPhone 14",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/174zTtL/iphone-2.jpg",
+      "price": 799,
+      "description": "The powerful iPhone 14 with advanced features.",
+      "specification": [
+        "6.1-inch Super Retina XDR display",
+        "A15 Bionic chip",
+        "Dual-camera system (12MP Main, 12MP Ultrawide)",
+        "Up to 1TB storage"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 3,
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/pfkwtXL/iphone-4.jpg",
+      "price": 1199,
+      "description": "High-performance Samsung Galaxy S23 Ultra with premium features.",
+      "specification": [
+        "6.8-inch Dynamic AMOLED 2X display",
+        "Snapdragon 8 Gen 2",
+        "Quad-camera system (200MP Main, 10MP Telephoto, 12MP Ultrawide)",
+        "Up to 1TB storage"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": 4,
+      "product_title": "MacBook Air M2",
+      "category": "Laptops",
+      "product_image": "https://i.ibb.co.com/gjqNrtg/laptop-1.webp",
+      "price": 999,
+      "description": "Powerful and portable MacBook Air with M2 chip.",
+      "specification": [
+        "13.6-inch Liquid Retina display",
+        "M2 chip",
+        "Up to 24GB unified memory",
+        "Up to 2TB SSD storage"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 5,
+      "product_title": "MacBook Pro 14-inch",
+      "category": "Laptops",
+      "product_image": "https://example.com/macbookpro14.jpg",
+      "price": 1999,
+      "description": "Compact power with the MacBook Pro 14-inch.",
+      "specification": [
+        "14.2-inch Liquid Retina XDR display",
+        "M2 Pro or M2 Max chip",
+        "Up to 32GB unified memory",
+        "Up to 8TB SSD storage"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 6,
+      "product_title": "Dell XPS 13",
+      "category": "Laptops",
+      "product_image": "https://i.ibb.co.com/S0zvq8B/laptop-2.webp",
+      "price": 1099,
+      "description": "Ultra-slim Dell XPS 13 with high-end performance.",
+      "specification": [
+        "13.4-inch FHD+ InfinityEdge display",
+        "Intel Core i7",
+        "16GB RAM",
+        "512GB SSD storage"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 7,
+      "product_title": "AirPods Pro (2nd generation)",
+      "category": "Accessories",
+      "product_image": "https://i.ibb.co.com/0h05RTQ/accesori-1.webp",
+      "price": 249,
+      "description": "Noise-canceling earbuds with immersive sound.",
+      "specification": [
+        "Active Noise Cancellation",
+        "Transparency mode",
+        "Personalized Spatial Audio",
+        "Up to 6 hours of listening time"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 8,
+      "product_title": "MagSafe Charger",
+      "category": "Accessories",
+      "product_image": "https://i.ibb.co.com/YybP1JZ/accesori-2.webp",
+      "price": 39,
+      "description": "Fast wireless charging with MagSafe.",
+      "specification": [
+        "15W wireless charging",
+        "MagSafe compatibility",
+        "Compact and portable design"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 9,
+      "product_title": "Apple Pencil (2nd generation)",
+      "category": "Accessories",
+      "product_image": "https://i.ibb.co.com/c1t81Cs/accesori-4.webp",
+      "price": 129,
+      "description": "Precision tool for your iPad.",
+      "specification": [
+        "Magnetic attachment",
+        "Double-tap functionality",
+        "Compatible with iPad Pro and iPad Air"
+      ],
+      "availability": true,
+      "rating": 4.8
+    }
+   
+  ]
+  
