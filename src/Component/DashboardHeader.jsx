@@ -1,9 +1,11 @@
 import React from 'react';
-import Dashboard from '../Pages/Dashboard';
+
+import { Link, Outlet } from 'react-router-dom';
 
 const DashboardHeader = () => {
     return (
-        <div className="bg-purple-600 rounded-lg shadow-lg p-8 mb-8 flex flex-col items-center">
+       <div className='w-11/12 mx-auto'>
+         <div className="bg-purple-600 rounded-lg shadow-lg p-8 mb-8 flex flex-col items-center">
             <h1 className="text-white text-4xl font-extrabold mb-4 text-center">
                 Welcome to Your Dashboard
             </h1>
@@ -14,15 +16,18 @@ const DashboardHeader = () => {
                 Stay organized and make the most of your dashboard experience.
             </p>
             <div className="flex gap-4">
-                <button className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
-                    Get Started
-                </button>
-                <button className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
-                    View Reports
-                </button>
+                <Link to="/dashboard" className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
+                   Cart
+                </Link>
+                <Link to="/dashboard/wishlist" className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
+                    Wishlist
+                </Link>
             </div>
-            <Dashboard></Dashboard>
+            
+           
         </div>
+        <Outlet></Outlet>
+       </div>
     );
 };
 

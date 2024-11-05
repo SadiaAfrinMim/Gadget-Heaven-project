@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='  w-11/12 mx-auto'>
-           <div className="hero rounded-b-xl bg-[#9538E2] text-white min-h-screen ">
+        <div className='w-11/12 mx-auto'>
+           <div className="hero rounded-b-xl bg-[#9538E2] text-white ">
   <div className="hero-content text-center">
     <div className="max-w-md">
       <h1 className="text-5xl font-bold">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>

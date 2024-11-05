@@ -3,8 +3,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { IoCart } from "react-icons/io5";
 import { GiSelfLove } from "react-icons/gi";
 
+
+
 const Navbar = () => {
     const { pathname } = useLocation();
+
 
     const link = (
         <>
@@ -24,13 +27,16 @@ const Navbar = () => {
             <li>
                 <NavLink to="/dashboard" className="px-4 py-2 font-semibold text-black">Dashboard</NavLink>
             </li>
+            <li>
+                <NavLink to="/GadgetHeave-/contact" className="px-4 py-2 font-semibold text-black">Contact</NavLink>
+            </li>
         </>
     );
 
     return (
         <div
             className={`w-11/12 mx-auto rounded-t-xl ${
-                pathname === '/' ? 'bg-[#9538E2]' : 'bg-white'
+                pathname === '/' ? 'bg-[#9538E2] text-white' : 'bg-white'
             }`}
         >
             <div className="navbar">
@@ -56,7 +62,7 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="  text-xl">daisyUI</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -65,7 +71,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-4">
              <p >   <IoCart className='w-10 h-10 text-xl rounded-full border-2 p-2' /></p>
-                <p ><GiSelfLove className='w-10 h-10 text-xl rounded-full border-2 p-2'/></p>
+                <p ><GiSelfLove className='w-10 h-10 text-xl rounded-full  border-2 p-2'/></p>
                     
                 </div>
             </div>

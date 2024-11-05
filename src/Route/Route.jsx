@@ -4,14 +4,18 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../Pages/Home';
 import Statistic from '../Pages/Statistic';
 import Dashboard from '../Pages/Dashboard';
-import Card from '../Component/Card/Card';
-import CardDetails from '../Component/Card/Carddetails';
 import DashboardHeader from '../Component/DashboardHeader';
+import Allcard from '../Component/Card/Allcard';
+import Wishlist from '../Component/Wishlist';
+import Contac from '../Pages/Contac';
+import Errorpage from '../Pages/Errorpage';
+
 
 const Route = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement:<Errorpage></Errorpage>,
     children: [
       {
         path: "/", // Home page route
@@ -20,7 +24,7 @@ const Route = createBrowserRouter([
       },
       {
         path: "cards", // Route for Card component
-        element: <Card />,
+        element: <Allcard/>,
         loader: () => fetch('../fakedata.json'), // Add loader if you need data for Card
       },
       {
@@ -30,17 +34,30 @@ const Route = createBrowserRouter([
       {
         path:'/dashboard',
         element:<DashboardHeader></DashboardHeader>,
+        children:[
+          {
+            path: "/dashboard", 
+            element: <Dashboard></Dashboard>,
+            loader: () => fetch('../fakedata.json'), 
+          },
+          {
+            path:"/dashboard/wishlist",
+            element:<Wishlist></Wishlist>,
+            loader: ()=>fetch('../fakedata.json')
+          }
+        ]
       },
-      {
-        path: "/dashboard/:product_id", // Dashboard page route
-        element: <Dashboard />,
-        loader: () => fetch('../fakedata.json'), 
-      },
+      
       {
         path: "/category/:product_id", 
-        element: <CardDetails />,
+        element: <Allcard />,
         loader: () => fetch('../fakedata.json'), 
       },
+      {
+        path:"/GadgetHeave-/contact",
+        element:<Contac></Contac>
+
+      }
     ],
   },
 ]);

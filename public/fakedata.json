@@ -14,7 +14,7 @@
         "Up to 2TB storage"
       ],
       "availability": true,
-      "rating": 4.8
+      "rating": 2.8
     },
     {
       "product_id": 2,
@@ -117,7 +117,7 @@
       "product_title": "MagSafe Charger",
       "category": "Accessories",
       "product_image": "https://i.ibb.co.com/YybP1JZ/accesori-2.webp",
-      "price": 39,
+      "price": 3967,
       "description": "Fast wireless charging with MagSafe.",
       "specification": [
         "15W wireless charging",
@@ -132,7 +132,7 @@
       "product_title": "Apple Pencil (2nd generation)",
       "category": "Accessories",
       "product_image": "https://i.ibb.co.com/c1t81Cs/accesori-4.webp",
-      "price": 129,
+      "price": 1209,
       "description": "Precision tool for your iPad.",
       "specification": [
         "Magnetic attachment",
