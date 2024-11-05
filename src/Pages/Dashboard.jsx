@@ -32,7 +32,7 @@ const Dashboard = () => {
         setDashboard(sorted)
       }
     
-      const handlePurchaseBtn= ()=>{
+      const handlePurchaseBtn= (amount)=>{
         localStorage.removeItem('card-list')
         setDashboard([])
         document.getElementById('my_modal_1').showModal()
@@ -56,56 +56,84 @@ const Dashboard = () => {
 
     return (
     
-        <div className="w-11/12 mx-auto felx justify-between">
-          <div className='flex justify-between'>
-              
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-700">Cart</h2>
-            </div>
-           <div>
-          
-            <div className="flex gap-4">
-            <p className="text-2xl font-bold text-purple-600"> Total Amount:{amount} </p>
-                <button onClick={handleSortDs} className="bg-purple-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-purple-700 transition">
-                Sort by Price
-                </button>
-                <button onClick={handlePurchaseBtn} className="bg-gray-200 text-purple-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-300 transition">
-                Purchase
-                </button>
-           </div>
-          </div>
-            </div>
-          
-               {
-                dashboard.map(deatail=> <div className="bg-white flex items-center justify-between p-6 mb-8 rounded-lg shadow-lg">
-  
-                  <div className="flex items-center gap-4">
-                    <img 
-                      src={deatail.product_image}
-                      className="w-80 h-48 object-cover rounded-lg"
-                    />
-                    
-                    <div className="ml-4">
-                      <h1 className="text-2xl font-bold mb-2">Product: {deatail.product_title}</h1>
-                      <p className="text-lg font-semibold">Price: ${deatail.price}</p>
-                      <p className="mt-2">Category: {deatail.category}</p>
-                      <p className="mt-2">Rating: {deatail.rating} / 5</p>
-                    </div>
-                  </div>
-                
-                  <div 
-                    className="cursor-pointer" 
-                    onClick={() => handleRemoveToLS(deatail.product_id, deatail.product_title, deatail.price)}
-                  >
-                    <RiDeleteBin5Fill className="text-2xl font-bold text-red-700 w-14 h-14 border-2 border-red-700 rounded-full p-2 animate-bounce" />
-                  </div>
-                  
-                </div>
-               )}
-               <Modal>{payment}</Modal>
+      <div className="w-11/12 mx-auto  gap-6">
+      {/* Header Section */}
+      <div className="w-11/12 mx-auto py-6">
+  <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between">
+    
+    {/* Cart Header */}
+    <div className="mb-4 lg:mb-0">
+      <h2 className="text-2xl font-semibold text-gray-700">Cart</h2>
+    </div>
 
+    {/* Actions Section */}
+    <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 flex-wrap items-start lg:items-center lg:justify-end w-full lg:w-auto">
+      
+      {/* Total Amount */}
+      <p className="text-xl lg:text-2xl font-bold text-purple-600 text-center lg:text-left">
+        Total Amount: ${amount}
+      </p>
+
+      {/* Sort Button */}
+      <div className='flex justify-between items-center gap-4'>
+      <button 
+        onClick={handleSortDs} 
+        className="bg-purple-600 text-white font-semibold py-2 px-4 lg:px-6 rounded-full  hover:bg-purple-700 transition text-sm lg:text-base"
+      >
+        Sort by Price
+      </button>
+
+      {/* Purchase Button */}
+      <button 
+        onClick={() => handlePurchaseBtn(amount)} 
+        className="bg-gray-200 text-purple-600 font-semibold py-2 px-4 lg:px-6 rounded-full hover:bg-gray-300 transition text-sm lg:text-base"
+      >
+        Purchase
+      </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    
+      {/* Cart Items */}
+      <div className="w-full  gap-6">
+        {dashboard.map(deatail => (
+          <div 
+            className="bg-white flex flex-col md:flex-row items-center md:justify-between p-4 md:p-6 rounded-lg shadow-lg"
+            key={deatail.product_id}
+          >
+            {/* Product Image and Details */}
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <img 
+                src={deatail.product_image}
+                className="w-full md:w-80 h-48 object-cover rounded-lg"
+                alt={deatail.product_title}
+              />
+              <div className="text-center md:text-left">
+                <h1 className="text-lg md:text-2xl font-bold mb-2">Product: {deatail.product_title}</h1>
+                <p className="text-md md:text-lg font-semibold">Price: ${deatail.price}</p>
+                <p className="text-sm md:text-base mt-2">Category: {deatail.category}</p>
+                <p className="text-sm md:text-base mt-2">Rating: {deatail.rating} / 5</p>
+              </div>
+            </div>
             
-        </div>
+            {/* Delete Icon */}
+            <div 
+              className="cursor-pointer mt-4 md:mt-0"
+              onClick={() => handleRemoveToLS(deatail.product_id, deatail.product_title, deatail.price)}
+            >
+              <RiDeleteBin5Fill className="text-xl md:text-2xl font-bold text-red-700 w-10 h-10 md:w-14 md:h-14 border-2 border-red-700 rounded-full p-2 animate-bounce" />
+            </div>
+          </div>
+        ))}
+      </div>
+    
+      {/* Modal */}
+      <Modal payment={payment}></Modal>
+    </div>
+    
     );
 };
 

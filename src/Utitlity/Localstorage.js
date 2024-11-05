@@ -3,8 +3,7 @@ import toast from "react-hot-toast";
 const getStoredCartItems = () => {
   const addCardStr = localStorage.getItem('card-list');
 
-  //  todo
-  console.log("add to acar",addCardStr)
+ 
   
   if(addCardStr){
     const storedCardData = JSON.parse(addCardStr);
@@ -39,7 +38,7 @@ const getStoredWishList = ()=>{
   console.log('addwishlist',addWishStr)
   if(addWishStr){
     const storedWishData = JSON.parse(addWishStr);
-    console.log('inner get from ls')
+    
     return storedWishData;
   }
   else{

@@ -10,9 +10,7 @@ const Contac = () => {
           {/* Header Section */}
           <div className="hero rounded-t-xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white p-10 text-center shadow-lg space-y-8">
             <h1 className="text-4xl font-extrabold mb-10">Contact with Us</h1>
-            <p className="py-4 text-lg font-medium">
-              Connect with us to explore the latest gadgets and accessories. We’re here to help!
-            </p>
+            
            
           </div>
       
