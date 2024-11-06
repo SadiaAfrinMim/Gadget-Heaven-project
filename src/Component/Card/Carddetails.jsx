@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { setStoredCartItems, setStoredWishList } from "../../Utitlity/Localstorage";
+import { getStoredWishList, setStoredCartItems, setStoredWishList } from "../../Utitlity/Localstorage";
 import ReactStars from "react-rating-stars-component";
+import { BsCart } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
 
 
 
@@ -9,21 +11,35 @@ const CardDetails = () => {
   const useDetails = useLoaderData();
   const { product_id } = useParams();
   const [singleDetails, setSingleDetails] = useState(null);
+  const [isWishListDisable, setWislistDisable] = useState(false);
+  
 
   // Set the selected product's details
   useEffect(() => {
     const singleData = useDetails.find(
       (eachData) => eachData.product_id === parseInt(product_id)
     );
-    setSingleDetails(singleData);
-    console.log(singleData);
+    setSingleDetails(singleData||{});
+
+    const isWishList = getStoredWishList();
+    const isExist = isWishList.find(id => JSON.parse(product_id) === singleData.id)
+    if(isExist){
+      setWislistDisable(true)
+    }
+    document.title = "ProductDetails || Gadget Heaven"
+   
   }, [product_id, useDetails]);
 
-  const handleAddtoCart = (product_id) => {
-    setStoredCartItems(product_id);
+ 
+
+  
+
+  const handleAddtoCart = (product_id,product_title) => {
+    setStoredCartItems(product_id,product_title);
   };
-  const handleWishList = (product_id) =>{
-    setStoredWishList(product_id)
+  const handleWishList = (product_id,product_title) =>{
+    setStoredWishList(product_id,product_title)
+    setWislistDisable(true)
   }
 
   const {
@@ -76,23 +92,23 @@ const CardDetails = () => {
             <ReactStars count={5} value={rating} size={24} activeColor="#ffd700" />
           </p>
           <div className="flex gap-2 justify-center lg:justify-start">
-            <Link to={"/dashboard"}>
+           
               <button
-                onClick={() => handleAddtoCart(product_id)}
-                className="btn text-white bg-[hsl(273,75%,55%)] rounded-full font-bold"
+                onClick={() => handleAddtoCart(product_id,product_title)}
+                className="btn text-white outline-2 bg-[hsl(273,75%,55%)] rounded-full font-bold"
               >
-                Add to cart
+                Add to cart <BsCart />
               </button>
-            </Link>
+           
   
-            <Link to={"/dashboard/wishlist"}>
-              <button
-                onClick={() => handleWishList(product_id)}
-                className="btn text-white bg-[#9538E2] rounded-full font-bold"
+      
+              <button disabled={isWishListDisable}
+                onClick={() => handleWishList(product_id,product_title)}
+                className="btn btn-outline outline-2 text-xl text-[#9538E2]  font-bold rounded-full outline-purple-600"
               >
-                Wishlist
+               <FaRegHeart />
               </button>
-            </Link>
+           
           </div>
         </div>
       </div>

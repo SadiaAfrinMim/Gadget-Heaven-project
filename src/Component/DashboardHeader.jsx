@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Link, Outlet } from 'react-router-dom';
 
 const DashboardHeader = () => {
+    useEffect((),{})
     return (
        <div className='w-11/12  mx-auto'>
          <div className="bg-purple-600 rounded-lg shadow-lg p-8 mb-8 flex flex-col items-center">

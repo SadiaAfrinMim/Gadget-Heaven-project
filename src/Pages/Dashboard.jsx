@@ -4,12 +4,15 @@ import { getStoredCartItems, removecard } from '../Utitlity/Localstorage';
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import Modal from '../Component/Modal';
 
+
 const Dashboard = () => {
     const dashboardDetails = useLoaderData(); 
   
     const [dashboard, setDashboard] = useState([]);
     const [amount,setAmount] = useState(0) 
     const [payment, setPayment] = useState(0)
+    const [isDisable, setDisable] = useState(true)
+  
     
     
     useEffect(() => {
@@ -21,6 +24,9 @@ const Dashboard = () => {
 
     const totalCost = filterCard.reduce((sum, sinCard) => sum + sinCard.price, 0).toFixed(2);
     setAmount(totalCost);
+
+    setDisable(filterCard.length === 0)
+    
         
         
     }, [dashboardDetails, setDashboard]);
@@ -38,6 +44,7 @@ const Dashboard = () => {
         document.getElementById('my_modal_1').showModal()
         setPayment(amount)
         setAmount(0)
+        setDisable(true);
       }
 
       
@@ -50,6 +57,8 @@ const Dashboard = () => {
         setDashboard(filterCard);
     
         setAmount((amount - price).toFixed(2))
+
+        setDisable(filterCard.length === 0)
       }
    
     
@@ -84,7 +93,7 @@ const Dashboard = () => {
       </button>
 
       {/* Purchase Button */}
-      <button 
+      <button  disabled={isDisable}
         onClick={() => handlePurchaseBtn(amount)} 
         className="bg-gray-200 text-purple-600 font-semibold py-2 px-4 lg:px-6 rounded-full hover:bg-gray-300 transition text-sm lg:text-base"
       >

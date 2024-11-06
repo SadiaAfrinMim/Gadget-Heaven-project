@@ -3,11 +3,8 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { IoCart } from "react-icons/io5";
 import { GiSelfLove } from "react-icons/gi";
 
-
-
 const Navbar = () => {
     const { pathname } = useLocation();
-
 
     const link = (
         <>
@@ -15,7 +12,7 @@ const Navbar = () => {
                 <NavLink
                     to="/"
                     className={`px-4 py-2 font-semibold ${
-                        pathname === '/' ? 'text-white' : 'text-black'
+                        pathname === '/' ? 'text-white ' : 'text-black'
                     }`}
                 >
                     Home
@@ -35,8 +32,8 @@ const Navbar = () => {
 
     return (
         <div
-            className={`w-11/12 mx-auto rounded-t-xl ${
-                pathname === '/' ? 'bg-[#9538E2] text-white' : 'bg-white'
+            className={`w-11/12 mx-auto rounded-t-xl border-2 ${
+                pathname === '/' ? 'bg-[#9538E2] text-white border-[#9538E2]' : 'bg-white border-gray-300'
             }`}
         >
             <div className="navbar">
@@ -62,7 +59,7 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <a className="  text-xl">daisyUI</a>
+                    <a className="text-xl font-bold">Gadget Heaven</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -70,9 +67,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-             <p >   <IoCart className='w-10 h-10 text-xl rounded-full border-2 p-2' /></p>
-                <p ><GiSelfLove className='w-10 h-10 text-xl rounded-full  border-2 p-2'/></p>
-                    
+                    <IoCart className="w-10 h-10 text-xl rounded-full border-2 border-[#9538E2] p-2" />
+                    <GiSelfLove className="w-10 h-10 text-xl rounded-full border-2 border-[#9538E2] p-2" />
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { getStoredWishList, removeWish } from '../Utitlity/Localstorage';
 const Wishlist = () => {
     const allCard = useLoaderData();
     const [wishList, setWishList] = useState([]);
-    console.log('wishlist adding',wishList)
+    
 
     useEffect(() => {
         const addToCardId = getStoredWishList();

@@ -52,6 +52,7 @@ console.log('outer get from ls')
 
 const setStoredWishList = (id, name)=>{
   const storedWish = getStoredWishList();
+  
     storedWish.push(id);
     const storedWishList = JSON.stringify(storedWish);
     localStorage.setItem('wish-list', storedWishList);
