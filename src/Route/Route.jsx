@@ -18,18 +18,18 @@ const Route = createBrowserRouter([
     errorElement:<Errorpage></Errorpage>,
     children: [
       {
-        path: "/", // Home page route
+        path: "/", 
         element: <Home />,
-        loader: () => fetch('../btnfakedata.json'), // Ensure correct path for your data
+        loader: () => fetch('../btnfakedata.json'), 
       },
       {
-        path: "cards", // Route for Card component
+        path: "cards", 
         element: <Allcard/>,
-        loader: () => fetch('../fakedata.json'), // Add loader if you need data for Card
+        loader: () => fetch('../fakedata.json'),
       },
       {
-        path: "/statistic", // Statistic page route
-        element: <Statistic />,
+        path: "/statistic", 
+        element: <Statistic></Statistic>
       },
       {
         path:'/dashboard',
@@ -50,7 +50,7 @@ const Route = createBrowserRouter([
       
       {
         path: "/category/:product_id", 
-        element: <Allcard />,
+        element: <Allcard></Allcard>,
         loader: () => fetch('../fakedata.json'), 
       },
       {
