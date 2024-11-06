@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useLoaderData } from 'react-router-dom';
 import { getStoredWishList, removeWish } from '../Utitlity/Localstorage';
+import { TiDeleteOutline } from "react-icons/ti";
 
 const Wishlist = () => {
     const allCard = useLoaderData();
@@ -14,12 +15,12 @@ const Wishlist = () => {
         const filterCard = allCard.filter(card => convertIntCardId.includes(card.product_id)); 
         setWishList(filterCard);
 
-    }, [allCard]); // Use allCard as dependency
+    }, [allCard]); 
 
     const handleRemoveWish = (id, name) => {
         removeWish(id, name);
 
-        const updatedCardIds = getStoredWishList(); // Fetch the updated wish list after removal
+        const updatedCardIds = getStoredWishList();
         const convertIntCardId = updatedCardIds.map(id => parseInt(id));
         const filterCard = allCard.filter(card => convertIntCardId.includes(card.product_id));
         setWishList(filterCard);
@@ -57,9 +58,9 @@ const Wishlist = () => {
           <div className="mt-4 lg:mt-0">
             <button 
               onClick={() => handleRemoveWish(card.product_id, card.product_title)} 
-              className="btn btn-sm lg:btn-md bg-red-500 text-white font-bold text-sm lg:text-lg rounded-full border border-red-500 hover:bg-red-600 transition-colors"
+              
             >
-              Remove
+              <TiDeleteOutline className='text-5xl text-red-600  font-bold rounded-full animate-bounce' />
             </button>
           </div>
         </div>

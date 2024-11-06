@@ -13,7 +13,7 @@
         "LiDAR Scanner",
         "Up to 2TB storage"
       ],
-      "availability": true,
+      "availability": false,
       "rating": 2.8
     },
     {
@@ -141,7 +141,59 @@
       ],
       "availability": true,
       "rating": 4.8
+    },
+    {
+      "product_id": 32,
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/ZfHPZn6/phone-4.jpg",
+      "price": 1199,
+      "description": "The ultimate flagship phone from Samsung with groundbreaking features.",
+      "specification": [
+        "6.8-inch Dynamic AMOLED 2X display",
+        "Snapdragon 8 Gen 2 processor",
+        "Quad-camera system (200MP Main, 12MP Ultra-wide, 10MP Telephoto)",
+        "S Pen support",
+        "Up to 1TB storage"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 33,
+      "product_title": "Google Pixel 8 Pro",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/nkXJqcz/iphone-6.jpg",
+      "price": 899,
+      "description": "The purest Android experience with the Google Pixel 8 Pro.",
+      "specification": [
+        "6.7-inch LTPO OLED display",
+        "Google Tensor G3 chip",
+        "Triple-camera system (50MP Main, 48MP Ultra-wide, 48MP Telephoto)",
+        "Google Assistant integration",
+        "Up to 512GB storage"
+      ],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": 45,
+      "product_title": "OnePlus 11 5G",
+      "category": "Smartphones",
+      "product_image": "https://i.ibb.co.com/qsmYXCF/iphone-4.jpg",
+      "price": 749,
+      "description": "The fast and smooth OnePlus 11 with an AMOLED display and great performance.",
+      "specification": [
+        "6.7-inch Fluid AMOLED display",
+        "Snapdragon 8 Gen 2 processor",
+        "50MP Triple-camera system",
+        "120Hz refresh rate",
+        "Up to 256GB storage"
+      ],
+      "availability": true,
+      "rating": 4.2
     }
+  
    
   ]
   

@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const DashboardHeader = () => {
-    useEffect((),{})
+    const location= useLocation()
+    
     return (
-       <div className='w-11/12  mx-auto'>
+       <div className='w-11/12  mx-auto mt-20'>
          <div className="bg-purple-600 rounded-lg shadow-lg p-8 mb-8 flex flex-col items-center">
             <h1 className="text-white text-4xl font-extrabold mb-4 text-center">
                 Welcome to Your Dashboard
@@ -17,12 +18,15 @@ const DashboardHeader = () => {
                 Stay organized and make the most of your dashboard experience.
             </p>
             <div className="flex gap-4">
-                <Link to="/dashboard" className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
-                   Cart
-                </Link>
-                <Link to="/dashboard/wishlist" className="bg-white text-purple-600 font-semibold py-2 px-4 rounded-full hover:bg-purple-100 transition">
-                    Wishlist
-                </Link>
+            <Link  
+             className={`btn px-10 rounded-full font-bold text-base 
+              ${location.pathname==='/dashboard' ? 'text-[#9538E2] bg-white hover:bg-white' :'bg-transparent text-white hover:bg-transparent border-white'}`}
+            to='/dashboard'>
+              Cart</Link>
+            <Link 
+            className={`btn px-7 rounded-full font-bold text-base 
+              ${location.pathname=== '/dashboard/wishlist' ? 'text-[#9538E2] bg-white hover:bg-white' :'bg-transparent text-white hover:bg-transparent border-white'}`}
+            to='/dashboard/wishlist'>Wishlist</Link>
             </div>
             
            

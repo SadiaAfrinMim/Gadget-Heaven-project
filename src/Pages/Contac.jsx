@@ -5,7 +5,7 @@ const Contac = () => {
     document.title='contact-Gadget Heave'
   },[])
     return (
-        <div className="w-full flex justify-center items-center min-h-screen bg-gray-100 py-16 px-4">
+        <div className="w-full flex justify-center items-center min-h-screen bg-gray-100 py-16 px-4 mt-10">
         <div className="w-full max-w-3xl">
           {/* Header Section */}
           <div className="hero rounded-t-xl bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white p-10 text-center shadow-lg space-y-8">

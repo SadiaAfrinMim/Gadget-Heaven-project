@@ -6,7 +6,9 @@ const getStoredCartItems = () => {
  
   
   if(addCardStr){
+    
     const storedCardData = JSON.parse(addCardStr);
+    
     return storedCardData;
   }
   else{
@@ -18,9 +20,15 @@ const getStoredCartItems = () => {
 const setStoredCartItems = (id,name) => {
   
   const storedCard = getStoredCartItems();
+  
+  // Check if item already exists in the cart
+  if (storedCard.includes(id)) {
+    toast.error(`${name} is already in your cart!`);
+    return;
+  }
+  
   storedCard.push(id);
-  const storedCardList = JSON.stringify(storedCard);
-  localStorage.setItem('card-list', storedCardList);
+  localStorage.setItem('card-list', JSON.stringify(storedCard));
   toast.success(`${name} successfully added!`);
 };
 
@@ -39,6 +47,7 @@ const getStoredWishList = ()=>{
   if(addWishStr){
     const storedWishData = JSON.parse(addWishStr);
     
+    
     return storedWishData;
   }
   else{
@@ -53,10 +62,15 @@ console.log('outer get from ls')
 const setStoredWishList = (id, name)=>{
   const storedWish = getStoredWishList();
   
-    storedWish.push(id);
-    const storedWishList = JSON.stringify(storedWish);
-    localStorage.setItem('wish-list', storedWishList);
-    toast.success(`${name} successfully added!`);
+
+  if (storedWish.includes(id)) {
+    toast.error(`${name} is already in your wishlist!`);
+    return;
+  }
+
+  storedWish.push(id);
+  localStorage.setItem('wish-list', JSON.stringify(storedWish));
+  toast.success(`${name} successfully added!`);
 }
 
 const removeWish = (idx, name)=>{

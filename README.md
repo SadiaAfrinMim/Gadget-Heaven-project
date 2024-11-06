@@ -1,8 +1,24 @@
-# React + Vite
+# Attach Live Website Link:
+# Attach Requirement Document Link: 
+# List of React Fundamental concepts used in the project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. React Components:
+2. JSX (JavaScript XML):
+3. React Router:
+4. State Management:
+5. useEffect for Side Effects:
+6. Fetching Data and Handling Edge Cases:
 
-Currently, two official plugins are available:
+# What you have used for handling and managing data (context
+API/local storage)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ GadgetHaven e-commerce platform, LocalStorage is used for persisting data across page reloads or browser sessions. This ensures that the data, such as items in the cart or wishlist, is retained even after a user refreshes the page or closes the browser.
+
+
+
+# features of your website/project
+ 1. Product Filtering and Category Sidebar
+ 2. Shopping Cart and Wishlist Management (with LocalStorage)
+ 3. Product Details Page
+ 4. Responsive Design
+ 5. Sorting by Price

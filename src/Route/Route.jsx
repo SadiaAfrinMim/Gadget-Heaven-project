@@ -28,7 +28,7 @@ const Route = createBrowserRouter([
         loader: () => fetch('../fakedata.json'), // Add loader if you need data for Card
       },
       {
-        path: "statistic", // Statistic page route
+        path: "/statistic", // Statistic page route
         element: <Statistic />,
       },
       {
@@ -54,7 +54,7 @@ const Route = createBrowserRouter([
         loader: () => fetch('../fakedata.json'), 
       },
       {
-        path:"/GadgetHeave-/contact",
+        path:"/contact",
         element:<Contac></Contac>
 
       }

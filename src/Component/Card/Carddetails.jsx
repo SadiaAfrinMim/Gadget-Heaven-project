@@ -77,12 +77,12 @@ const CardDetails = () => {
               ))}
           </ul>
           <p className="mt-2">
-            Availability:
+            Availability: 
             <span
               className={`${
                 availability
-                  ? "text-green-600 btn-xs border-2 border-green-600 rounded-full"
-                  : "text-red-600"
+                  ? "text-green-600 btn-xs border-2 border-green-600 font-bold rounded-full"
+                  : "text-red-600 font-bold btn-xs border-2 border-red-600 rounded-full"
               } ml-2`}
             >
               {availability ? "In Stock" : "Out of Stock"}
